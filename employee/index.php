@@ -10,7 +10,12 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'employee') {
 }
 
 $user_id = $_SESSION['user_id'];
-$conn = getDBConnection();
+$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection fail        ed: " . $conn->connect_error);
+}
 
 // Fetch employee details
 $stmt = $conn->prepare("SELECT * FROM employees WHERE id = ?");

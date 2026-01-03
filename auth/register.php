@@ -1,11 +1,27 @@
 <?php
+session_start();
 require_once '../config/database.php';
 require_once '../config/constants.php';
-require_once '../includes/functions.php';
 
-// Redirect if already logged in
-redirectIfLoggedIn();
+// --- REDIRECT IF ALREADY LOGGED IN ---
+if(isset($_SESSION['role'])) {
+    if($_SESSION['role'] === 'admin') {
+        header("Location: ../admin/index.php");
+        exit;
+    } else {
+        header("Location: ../employee/index.php");
+        exit;
+    }
+}
+
+// --- FLASH MESSAGE READ ---
+$flash = null;
+if(isset($_SESSION['flash'])){
+    $flash = $_SESSION['flash'];
+    unset($_SESSION['flash']);  // remove after showing
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -174,8 +190,7 @@ redirectIfLoggedIn();
                     <p>Join our HRMS platform</p>
                 </div>
                 <div class="register-body">
-                    <?php 
-                    $flash = getFlashMessage();
+                    <?php
                     if ($flash): 
                     ?>
                         <div class="alert alert-<?php echo $flash['type']; ?> alert-dismissible fade show" role="alert">

@@ -1,10 +1,30 @@
 <?php
+session_start();
 require_once '../config/database.php';
 require_once '../config/constants.php';
-require_once '../includes/functions.php';
 
-// Redirect if already logged in
-redirectIfLoggedIn();
+// -------- Redirect if user already logged in --------
+if(isset($_SESSION['user'])) {
+    if($_SESSION['user']['role'] == 'admin') {
+        header("Location: ../admin/index.php");
+        exit;
+    } else {
+        header("Location: ../employee/index.php");
+        exit;
+    }
+}
+
+// -------- Flash Message Handling --------
+$flash = null;
+
+if(isset($_SESSION['flash'])){
+    $flash = $_SESSION['flash'];
+    unset($_SESSION['flash']);
+}
+function getFlashMessage() {
+    global $flash;
+    return $flash;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
