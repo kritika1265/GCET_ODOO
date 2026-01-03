@@ -1,379 +1,142 @@
-# 🚀 TalentHub - Next-Gen HRMS Platform
+# 🌿 Dayflow – Human Resource Management System (HRMS)
 
-<div align="center">
+> **Every workday, perfectly aligned.**
 
-![TalentHub Logo](https://img.shields.io/badge/TalentHub-HRMS-2563eb?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0id2hpdGUiIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAybTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4bTAtMTRjLTMuMzEgMC02IDIuNjktNiA2czIuNjkgNiA2IDYgNi0yLjY5IDYtNi0yLjY5LTYtNi02bTAgMTBjLTIuMjEgMC00LTEuNzktNC00czEuNzktNCA0LTQgNCAxLjc5IDQgNC0xLjc5IDQtNCA0Ii8+PC9zdmc+)
-
-**Revolutionizing Workforce Management with Intelligent Automation**
-
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-blue.svg)](https://php.net)
-[![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-orange.svg)](https://mysql.com)
-[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-purple.svg)](https://getbootstrap.com)
-
-[🌟 Live Demo](#) | [📖 Documentation](#) | [🎯 Features](#features) | [🚀 Quick Start](#installation)
-
-</div>
+Dayflow is a web-based **Human Resource Management System (HRMS)** designed to digitize and streamline essential HR operations such as employee onboarding, attendance tracking, leave management, and payroll visibility. The system supports role-based access for **Admins/HR Officers** and **Employees**, ensuring secure and efficient workforce management.
 
 ---
 
-## 🎯 The Problem
+## 📌 Project Overview
 
-Traditional HR management systems are:
-- ❌ **Complex and expensive** - Enterprise solutions cost thousands per month
-- ❌ **Not user-friendly** - Steep learning curves frustrate employees
-- ❌ **Lack automation** - Manual approval processes waste valuable time
-- ❌ **Poor mobile experience** - Desktop-only systems limit accessibility
-- ❌ **Data silos** - Disconnected systems create inefficiencies
-
-## 💡 Our Solution
-
-**TalentHub** is a modern, lightweight HRMS that makes workforce management effortless. We've built a system that:
-
-✅ **Simplifies HR Operations** - Intuitive interface anyone can use  
-✅ **Automates Workflows** - Smart approval systems save hours daily  
-✅ **Mobile-First Design** - Manage everything from any device  
-✅ **Real-Time Analytics** - Data-driven insights at your fingertips  
-✅ **Zero Setup Cost** - Open-source and self-hosted  
+Manual HR processes are time-consuming and prone to errors. **Dayflow** provides a centralized digital platform to manage employee data, approvals, attendance, and payroll efficiently.
 
 ---
 
-## ✨ Features
+## 🎯 Key Features
 
-### 🔐 Smart Authentication System
-- **Role-Based Access Control** (Admin & Employee roles)
-- **Secure Password Encryption** using bcrypt algorithm
-- **Session Management** with automatic timeout
-- **Remember Me** functionality for convenience
-- **Login Activity Tracking** for security audits
-
-### 👥 Employee Management
-- **Comprehensive Profile System**
-  - Personal information & contact details
-  - Department and designation tracking
-  - Employment history management
-  - Profile picture uploads
-  - Auto-generated employee IDs (EMP0001, EMP0002...)
-
-### 📅 Intelligent Attendance Tracking
-- **Digital Clock-In/Out** system
-- **Daily & Weekly Views** with calendar integration
-- **Automatic Late Detection** based on configurable rules
-- **Attendance Reports** with export capabilities
-- **Real-time Status Updates**
-
-### 🏖️ Leave Management System
-- **Multiple Leave Types**: Sick, Casual, Annual, Emergency
-- **Smart Leave Balance** tracking per year
-- **One-Click Leave Requests** with date picker
-- **Instant Approval Workflow** for admins
-- **Leave History** with status tracking
-- **Email Notifications** (coming soon)
-
-### 📊 Admin Dashboard
-- **Real-Time Analytics** 
-  - Total employees count
-  - Today's attendance rate
-  - Pending leave requests
-  - Department-wise distribution
-- **Quick Actions** panel
-- **Recent Activity Feed**
-- **Data Visualizations** with charts
-
-### 🎨 Modern UI/UX
-- **Responsive Design** - Works on all devices
-- **Bootstrap 5** - Clean, professional interface
-- **Font Awesome Icons** - Beautiful visual elements
-- **Smooth Animations** - Engaging user experience
-- **Dark Mode Ready** - Easy on the eyes
+### 🔐 Authentication & Authorization
+- Secure Sign Up / Sign In
+- Email verification
+- Role-based access (Admin/HR vs Employee)
+- Password security rules
 
 ---
 
-## 🏗️ Architecture
+### 🏠 Dashboards
 
-### Tech Stack
+#### 👤 Employee Dashboard
+- Profile overview
+- Attendance tracking
+- Leave requests
+- Recent activity & alerts
 
-```
-Frontend:
-├── HTML5 & CSS3
-├── Bootstrap 5.3
-├── JavaScript (ES6+)
-└── Font Awesome 6.4
+#### 🛠️ Admin / HR Dashboard
+- Employee management
+- Attendance records
+- Leave approvals
+- Payroll overview
+- Ability to switch between employees
 
-Backend:
-├── PHP 7.4+
-├── MySQL 5.7+
-└── Apache/Nginx
+---
 
-Security:
-├── Password Hashing (bcrypt)
-├── Prepared Statements (SQL Injection Prevention)
-├── XSS Protection (htmlspecialchars)
-└── CSRF Protection (Session Tokens)
-```
+### 👨‍💼 Employee Profile Management
+- View personal & job details
+- Salary structure (read-only for employees)
+- Profile picture & documents
+- Admin can edit all employee details
 
-### Database Schema
+---
 
-```sql
-users ──┐
-        ├── employees ──┬── attendance
-        │               ├── leave_requests
-        │               └── leave_balance
-        └── login_logs (optional)
-```
+### ⏱️ Attendance Management
+- Daily & weekly attendance views
+- Check-in / Check-out functionality
+- Attendance status:
+  - Present
+  - Absent
+  - Half-day
+  - Leave
+- Role-based visibility
 
-### Project Structure
+---
 
-```
-talenthub/
-├── 📁 config/              # Configuration files
-│   ├── database.php        # DB connection
-│   └── constants.php       # App constants
-├── 📁 includes/            # Reusable components
+### 🌴 Leave & Time-Off Management
+- Apply for Paid, Sick, or Unpaid leave
+- Select date range & add remarks
+- Leave status:
+  - Pending
+  - Approved
+  - Rejected
+- Admin/HR approval with comments
+
+---
+
+### 💰 Payroll Management
+- Employees can view payroll (read-only)
+- Admin can:
+  - Update salary structure
+  - Ensure payroll accuracy
+  - View payroll of all employees
+
+---
+
+## 🛠️ Technology Stack
+
+- **Frontend:** HTML, CSS, Bootstrap, JavaScript, jQuery  
+- **Backend:** PHP  
+- **Database:** MySQL  
+- **Architecture:** Role-based modular structure  
+
+---
+
+## 📁 Project Structure
+
+```plaintext
+hrms/
+│
+├── config/
+│   ├── database.php
+│   └── constants.php
+│
+├── includes/
 │   ├── header.php
 │   ├── footer.php
-│   └── functions.php       # Helper functions
-├── 📁 auth/                # Authentication
+│   └── functions.php
+│
+├── auth/
 │   ├── login.php
 │   ├── register.php
-│   ├── authenticate.php
-│   └── logout.php
-├── 📁 admin/               # Admin panel
-│   ├── index.php           # Dashboard
-│   ├── employees.php       # Employee management
-│   ├── attendance.php      # Attendance tracking
-│   ├── leave-requests.php  # Leave approvals
-│   └── reports.php         # Analytics
-├── 📁 employee/            # Employee portal
-│   ├── index.php           # Dashboard
-│   ├── profile.php         # Profile management
-│   ├── attendance.php      # Clock in/out
-│   ├── leave-request.php   # Request leave
-│   └── leave-history.php   # Leave status
-├── 📁 api/                 # AJAX endpoints
+│   ├── logout.php
+│   └── authenticate.php
+│
+├── admin/
+│   ├── index.php
+│   ├── employees.php
+│   ├── attendance.php
+│   ├── leave-requests.php
+│   ├── reports.php
+│   └── settings.php
+│
+├── employee/
+│   ├── index.php
+│   ├── profile.php
+│   ├── attendance.php
+│   ├── leave-request.php
+│   └── leave-history.php
+│
+├── api/
 │   ├── attendance.php
 │   ├── leave.php
 │   └── profile.php
-├── 📁 assets/              # Static resources
+│
+├── assets/
 │   ├── css/
 │   ├── js/
 │   └── img/
-├── 📁 uploads/             # User uploads
+│
+├── uploads/
 │   └── profile_pictures/
-├── 📁 database/            # Database files
+│
+├── database/
 │   └── hrms.sql
-└── index.php               # Landing page
-```
-
----
-
-## 🚀 Installation
-
-### Prerequisites
-
-```bash
-✅ PHP 7.4 or higher
-✅ MySQL 5.7 or higher
-✅ Apache/Nginx web server
-✅ Composer (optional)
-```
-
-### Quick Start
-
-1️⃣ **Clone the Repository**
-```bash
-git clone https://github.com/yourusername/talenthub.git
-cd talenthub
-```
-
-2️⃣ **Import Database**
-```bash
-# Using MySQL command line
-mysql -u root -p < database/hrms.sql
-
-# Or import via phpMyAdmin
-# Navigate to phpMyAdmin → Import → Choose hrms.sql
-```
-
-3️⃣ **Configure Database**
-```php
-// Edit config/database.php
-define('DB_HOST', 'localhost');
-define('DB_USER', 'your_username');
-define('DB_PASS', 'your_password');
-define('DB_NAME', 'hrms_db');
-```
-
-4️⃣ **Update Site URL**
-```php
-// Edit config/constants.php
-define('SITE_URL', 'http://localhost/talenthub');
-```
-
-5️⃣ **Set Permissions**
-```bash
-chmod 755 uploads/
-chmod 755 uploads/profile_pictures/
-```
-
-6️⃣ **Access the Application**
-```
-🌐 Open: http://localhost/talenthub
-👤 Admin Login:
-   Email: admin@hrms.com
-   Password: admin123
-```
-
----
-
-## 🎯 Usage Guide
-
-### For Employees
-
-1. **Sign Up**: Register with your email and basic details
-2. **Complete Profile**: Add personal information, contact details
-3. **Mark Attendance**: Clock in when you arrive, clock out when leaving
-4. **Request Leave**: Select dates and leave type, add reason
-5. **Track Status**: Monitor leave approvals and attendance history
-
-### For Admins
-
-1. **Dashboard Overview**: Monitor key metrics and pending tasks
-2. **Manage Employees**: View, edit, or deactivate employee accounts
-3. **Approve Leaves**: Review requests and approve/reject instantly
-4. **Track Attendance**: Monitor real-time attendance and patterns
-5. **Generate Reports**: Export data for analysis and compliance
-
----
-
-## 🏆 Why TalentHub Wins Hackathons
-
-### Innovation 🚀
-- **Smart Leave Allocation**: Automatic balance calculation per year
-- **Predictive Analytics**: Identify attendance patterns (coming soon)
-- **AI-Powered Insights**: Suggest optimal leave schedules (roadmap)
-
-### Impact 💼
-- **50% Time Savings**: Automated workflows reduce manual HR work
-- **Zero Cost**: Free and open-source solution
-- **Scalable**: Works for 10 to 10,000 employees
-- **Eco-Friendly**: Paperless HR management
-
-### Technical Excellence 💻
-- **Clean Code**: PSR-12 coding standards
-- **Secure**: Industry-standard security practices
-- **Performant**: Optimized database queries
-- **Documented**: Comprehensive inline documentation
-
-### User Experience 🎨
-- **Intuitive**: 5-minute learning curve
-- **Beautiful**: Modern, professional design
-- **Accessible**: WCAG 2.1 compliant
-- **Fast**: <1 second page load times
-
----
-
-## 🗺️ Roadmap
-
-### Phase 1 - Core Features ✅ (Current)
-- [x] Authentication system
-- [x] Employee management
-- [x] Attendance tracking
-- [x] Leave management
-- [x] Admin dashboard
-
-### Phase 2 - Enhanced Features 🔄 (In Progress)
-- [ ] Email notifications
-- [ ] Document management
-- [ ] Payroll integration
-- [ ] Performance reviews
-- [ ] Team chat
-
-### Phase 3 - Advanced Features 🎯 (Planned)
-- [ ] Mobile app (React Native)
-- [ ] AI-powered analytics
-- [ ] Biometric integration
-- [ ] Multi-language support
-- [ ] API for third-party integrations
-
----
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how:
-
-1. 🍴 Fork the repository
-2. 🔧 Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. 💾 Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. 📤 Push to branch (`git push origin feature/AmazingFeature`)
-5. 🎉 Open a Pull Request
-
-### Development Guidelines
-
-```bash
-# Coding Standards
-- Follow PSR-12 for PHP
-- Use meaningful variable names
-- Comment complex logic
-- Write secure code
-
-# Testing
-- Test all user flows
-- Check mobile responsiveness
-- Validate forms
-- Test edge cases
-```
-
----
-
-## 📊 Performance Metrics
-
-| Metric | Target | Actual |
-|--------|--------|--------|
-| Page Load Time | <2s | 0.8s ⚡ |
-| Database Queries | <10/page | 6 ✅ |
-| Mobile Score | >90 | 95 📱 |
-| Security Score | A+ | A+ 🔒 |
-| Code Coverage | >80% | 85% ✅ |
-
----
-
-## 🛡️ Security Features
-
-- 🔐 **Bcrypt Password Hashing** - Industry-standard encryption
-- 💉 **SQL Injection Prevention** - Prepared statements everywhere
-- 🛡️ **XSS Protection** - Input sanitization and output encoding
-- 🔑 **Session Security** - Secure session handling with timeouts
-- 📝 **Audit Logging** - Track all critical actions
-- 🚪 **Role-Based Access** - Granular permission system
-
----
-
-## 👥 Team
-
-Built with ❤️ by passionate developers
-
-- **Project Lead**: [Kritika Singh]
-- **Backend Developer**: [Tulsi patel]
-- **Frontend Developer**: [Rani Patel]
-- **UI/UX Designer**: [Akshita]
-
----
-## 🌟 Acknowledgments
-
-- Bootstrap team for the amazing UI framework
-- Font Awesome for beautiful icons
-- PHP community for excellent documentation
-- All contributors and supporters
-
----
-
-<div align="center">
-
-### ⭐ Star us on GitHub — it helps!
-
-**[⬆ Back to Top](#-talenthub---next-gen-hrms-platform)**
-
-Made with 💙 for a better workplace
-
-</div> 
+│
+└── index.php
